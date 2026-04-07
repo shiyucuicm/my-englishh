@@ -303,10 +303,10 @@
 <nav>
     <div class="logo"><i class="fa-solid fa-graduation-cap"></i> 乐学英语</div>
     <div class="nav-links">
-        < a href=" "><i class="fa-solid fa-book"></i> 背单词</ a>
-        < a href="#daily"><i class="fa-solid fa-sun"></i> 每日一句</ a>
-        < a href="#course"><i class="fa-solid fa-chalkboard-user"></i> 课程</ a>
-        < a href="#listen"><i class="fa-solid fa-headphones"></i> 听说读写</ a>
+        <a href="#word"><i class="fa-solid fa-book"></i> 背单词</a>
+        <a href="#daily"><i class="fa-solid fa-sun"></i> 每日一句</a>
+        <a href="#course"><i class="fa-solid fa-chalkboard-user"></i> 课程</a>
+        <a href="#listen"><i class="fa-solid fa-headphones"></i> 听说读写</a>
     </div>
     <div id="userBox" onclick="openModal()" class="user-info">登录/注册</div>
 </nav>
@@ -337,9 +337,9 @@
     <div class="section" id="daily">
         <h2><i class="fa-solid fa-sun"></i> 每日一句</h2>
         <div style="font-size: 18px; line-height: 1.8; margin-bottom: 15px">
-            <p id="dailySentence">The best way to predict the future is to create it.</p >
+            <p id="dailySentence">The best way to predict the future is to create it.</p>
         </div>
-        <p style="color: #666; font-size: 16px" id="dailyTranslation">— 预测未来的最好方式就是去创造它。</p >
+        <p style="color: #666; font-size: 16px" id="dailyTranslation">— 预测未来的最好方式就是去创造它。</p>
     </div>
 
     <!-- 3. 课程展示 -->
@@ -348,15 +348,158 @@
         <div class="grid">
             <div class="course-card">
                 <h3><i class="fa-solid fa-brain"></i> 零基础启蒙班</h3>
-                <p>适合英语小白，从ABC开始学起</p >
-                <p style="color: #ff6b6b; font-weight: bold; margin-top: 10px">¥99 / 30天</p >
+                <p>适合英语小白，从ABC开始学起</p>
+                <p style="color: #ff6b6b; font-weight: bold; margin-top: 10px">¥99 / 30天</p>
             </div>
             <div class="course-card">
                 <h3><i class="fa-solid fa-trophy"></i> 四级通关班</h3>
-                <p>词汇+听力+阅读+写作，全套备考</p >
-                <p style="color: #ff6b6b; font-weight: bold; margin-top: 10px">¥199 / 60天</p >
+                <p>词汇+听力+阅读+写作，全套备考</p>
+                <p style="color: #ff6b6b; font-weight: bold; margin-top: 10px">¥199 / 60天</p>
             </div>
             <div class="course-card">
                 <h3><i class="fa-solid fa-microphone"></i> 口语实战班</h3>
-                <p>日常对话，敢说敢开口，流利交流</p >
-                <p st
+                <p>日常对话，敢说敢开口，流利交流</p>
+                <p style="color: #ff6b6b; font-weight: bold; margin-top: 10px">¥299 / 45天</p>
+            </div>
+            <div class="course-card">
+                <h3><i class="fa-solid fa-briefcase"></i> 商务精英班</h3>
+                <p>职场邮件、会议谈判，商务全场景</p>
+                <p style="color: #ff6b6b; font-weight: bold; margin-top: 10px">¥399 / 60天</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. 听力与阅读 -->
+    <div class="section" id="listen">
+        <h2><i class="fa-solid fa-headphones"></i> 听说读写训练</h2>
+        
+        <div class="audio-player">
+            <h3>🎧 每日听力：A Day in the Life</h3>
+            <p style="margin: 10px 0; color: #666">适合：中级 | 难度：★★★☆☆</p>
+            <button class="audio-btn" onclick="playAudio()"><i class="fa-solid fa-play"></i> 播放听力</button>
+        </div>
+
+        <div class="reading-content">
+            <h3>📖 短篇阅读：The Little Prince (Excerpt)</h3>
+            <hr style="margin: 15px 0; border: none; border-top: 1px solid #ddd;">
+            <p>It is only with the heart that one can see rightly; what is essential is invisible to the eye.</p>
+            <p style="margin-top: 10px; color: #666; border-left: 3px solid #ff6b6b; padding-left: 10px;">
+                只有用心才能看得清。实质性的东西，用眼睛是看不见的。
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- 移动端底部导航 -->
+<div class="bottom-nav">
+    <a href="#word"><i class="fa-solid fa-book"></i> 单词</a>
+    <a href="#daily"><i class="fa-solid fa-sun"></i> 每日</a>
+    <a href="#course"><i class="fa-solid fa-chalkboard-user"></i> 课程</a>
+    <a href="#listen"><i class="fa-solid fa-headphones"></i> 听说</a>
+</div>
+
+<script>
+    // 模拟单词数据
+    const wordBank = [
+        { word: "Abundant", meaning: "adj. 丰富的，充裕的", level: "CET4" },
+        { word: "Accommodate", meaning: "v. 容纳；适应；提供住宿", level: "CET6" },
+        { word: "Achieve", meaning: "v. 实现，达到；完成", level: "CET4" },
+        { word: "Adequate", meaning: "adj. 足够的；适当的", level: "CET4" },
+        { word: "Advocate", meaning: "v. 提倡，主张；n. 支持者", level: "CET6" },
+        { word: "Ambiguous", meaning: "adj. 模棱两可的，含糊不清的", level: "CET6" },
+        { word: "Analyze", meaning: "v. 分析，研究", level: "CET4" },
+        { word: "Approach", meaning: "v. 接近；n. 方法，途径", level: "CET4" },
+        { word: "Arise", meaning: "v. 出现；产生；起身", level: "CET4" },
+        { word: "Assess", meaning: "v. 评估，评定", level: "CET4" },
+        { word: "Assume", meaning: "v. 假定；承担；呈现", level: "CET4" },
+        { word: "Attain", meaning: "v. 达到，获得", level: "CET6" },
+        { word: "Benefit", meaning: "n. 好处；v. 受益", level: "CET4" },
+        { word: "Challenge", meaning: "n. 挑战；v. 挑战", level: "CET4" },
+        { word: "Conceive", meaning: "v. 构思；怀孕；认为", level: "CET6" }
+    ];
+
+    // 初始化单词列表
+    function initWords() {
+        const wordList = document.getElementById("wordList");
+        const saved = JSON.parse(localStorage.getItem("knownWords")) || [];
+        wordList.innerHTML = "";
+
+        // 随机取10个单词
+        const shuffled = [...wordBank].sort(() => 0.5 - Math.random()).slice(0, 10);
+        
+        shuffled.forEach((item, index) => {
+            const isKnown = saved.includes(item.word);
+            const card = document.createElement("div");
+            card.className = "word-card";
+            card.innerHTML = `
+                <h3>${item.word}</h3>
+                <p>${item.meaning}</p>
+                <span class="status ${isKnown ? 'status-known' : 'status-new'}">${isKnown ? '已掌握' : '未学习'}</span>
+            `;
+            card.onclick = () => toggleWord(item.word, card);
+            wordList.appendChild(card);
+        });
+
+        // 更新已学数量
+        document.getElementById("wordCount").textContent = `已学: ${saved.length}/${wordBank.length}`;
+    }
+
+    // 切换单词掌握状态
+    function toggleWord(word, card) {
+        let saved = JSON.parse(localStorage.getItem("knownWords")) || [];
+        if (saved.includes(word)) {
+            saved = saved.filter(w => w !== word);
+            card.querySelector(".status").className = "status status-new";
+            card.querySelector(".status").textContent = "未学习";
+        } else {
+            saved.push(word);
+            card.querySelector(".status").className = "status status-known";
+            card.querySelector(".status").textContent = "已掌握";
+        }
+        localStorage.setItem("knownWords", JSON.stringify(saved));
+        document.getElementById("wordCount").textContent = `已学: ${saved.length}/${wordBank.length}`;
+    }
+
+    // 刷新单词
+    function refreshWords() {
+        initWords();
+    }
+
+    // 登录逻辑
+    function openModal() {
+        document.getElementById("loginModal").style.display = "flex";
+    }
+    function closeModal() {
+        document.getElementById("loginModal").style.display = "none";
+    }
+    function doLogin() {
+        let user = document.getElementById("username").value;
+        if (!user) {
+            alert("请输入用户名");
+            return;
+        }
+        localStorage.setItem("username", user);
+        closeModal();
+        document.getElementById("mainContent").style.display = "block";
+        document.getElementById("userBox").innerHTML = `<span class="user-info">欢迎，${user}</span>`;
+    }
+
+    // 播放听力（模拟）
+    function playAudio() {
+        alert("听力播放功能已触发！可替换为真实音频链接");
+    }
+
+    // 页面加载初始化
+    window.onload = function() {
+        initWords();
+        let user = localStorage.getItem("username");
+        if (user) {
+            document.getElementById("mainContent").style.display = "block";
+            document.getElementById("userBox").innerHTML = `<span class="user-info">欢迎，${user}</span>`;
+        } else {
+            openModal();
+        }
+    }
+</script>
+</body>
+</html>
